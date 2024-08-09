@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
     companion object {
         init {
             try {
-                System.loadLibrary("android")
+                System.loadLibrary("infinilm_chat")
             } catch (e: UnsatisfiedLinkError) {
                 throw RuntimeException("Native library not found", e)
             }
@@ -53,11 +53,10 @@ class MainActivity : ComponentActivity() {
             intent.setData(Uri.parse("package:$packageName"));
             registerForActivityResult(
                 ActivityResultContracts.StartActivityForResult()
-            ) {
-                if (Environment.isExternalStorageManager()) {
-                    Toast.makeText(this, "授权成功", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "授权失败", Toast.LENGTH_SHORT).show()
+            ) { result ->
+                when (result.resultCode) {
+                    RESULT_OK -> Toast.makeText(this, "授权成功", Toast.LENGTH_SHORT).show()
+                    else -> Toast.makeText(this, "授权失败", Toast.LENGTH_LONG).show()
                 }
             }.launch(intent)
         }
