@@ -7,4 +7,4 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/InfiniTensor/InfiniLM-app)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/InfiniTensor/InfiniLM-app)
 
-See [InfiniLM/android](https://github.com/InfiniTensor/InfiniLM/tree/android/android) to build jniLibs.
+See [InfiniLM/android](https://github.com/InfiniTensor/InfiniLM/tree/main/android) to build jniLibs.
