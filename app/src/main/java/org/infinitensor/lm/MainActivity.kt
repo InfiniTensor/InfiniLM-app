@@ -98,7 +98,7 @@ class MainActivity : ComponentActivity() {
     companion object {
         init {
             try {
-                System.loadLibrary("android")
+                System.loadLibrary("infinilm_chat")
             } catch (e: UnsatisfiedLinkError) {
                 throw RuntimeException("Native library not found", e)
             }
